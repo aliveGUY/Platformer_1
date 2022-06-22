@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
-{   
+{
     public enum Move
     {
         trPosition,
@@ -12,12 +12,22 @@ public class Movement : MonoBehaviour
         rbVelocity,
         rbMovePosition
     }
+
     public Transform camera;
+
     public Move move;
+
     public float speed;
+
     private Transform m_transform;
+
     private Rigidbody2D m_rb;
-    private Vector2 m_dir, m_pos;
+
+    private Vector2
+
+            m_dir,
+            m_pos;
+
     void Start()
     {
         m_rb = GetComponent<Rigidbody2D>();
@@ -31,9 +41,9 @@ public class Movement : MonoBehaviour
         InputValue();
         TrMove();
         m_rb.centerOfMass = new Vector2(0, -2);
-        camera.rotation = Quaternion.Euler(0,0,0);
-        camera.position = new Vector3(m_transform.position.x,m_transform.position.y+2,-2);
-        
+        camera.rotation = Quaternion.Euler(0, 0, 0);
+        camera.position =
+            new Vector3(m_transform.position.x, m_transform.position.y + 2, -2);
     }
 
     private void FixedUpdate()
@@ -43,19 +53,17 @@ public class Movement : MonoBehaviour
 
     private void InputValue()
     {
-        m_dir = new Vector2(Input.GetAxis("Horizontal"),0);
+        m_dir = new Vector2(Input.GetAxis("Horizontal"), 0);
         m_pos += m_dir;
-    
     }
 
     private void TrMove()
     {
-        if(move == Move.trPosition)
+        if (move == Move.trPosition)
         {
             m_transform.position = m_dir * speed * Time.deltaTime;
-
         }
-        if(move == Move.trTranslate)
+        if (move == Move.trTranslate)
         {
             m_transform.Translate(m_dir * speed * Time.deltaTime);
         }
@@ -66,7 +74,6 @@ public class Movement : MonoBehaviour
         if (move == Move.rbForce)
         {
             m_rb.AddForce(m_dir * speed);
-
         }
         if (move == Move.rbVelocity)
         {
@@ -74,7 +81,7 @@ public class Movement : MonoBehaviour
         }
         if (move == Move.rbMovePosition)
         {
-            m_rb.MovePosition(m_pos); 
+            m_rb.MovePosition (m_pos);
         }
     }
 }

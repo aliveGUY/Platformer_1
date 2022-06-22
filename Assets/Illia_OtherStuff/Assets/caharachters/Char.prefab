@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1423486285}
   - component: {fileID: 1423486287}
   - component: {fileID: 1423486286}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: camera_Illia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,8 @@ GameObject:
   - component: {fileID: 2435335037663406223}
   - component: {fileID: -4864821353062336604}
   - component: {fileID: 5057287844592086376}
-  m_Layer: 0
+  - component: {fileID: 1736963861131136393}
+  m_Layer: 6
   m_Name: Char
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,3 +225,19 @@ MonoBehaviour:
   camera: {fileID: 0}
   move: 1
   speed: 10
+--- !u!114 &1736963861131136393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6905922594072645921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbee5ac742655954ca966f1c454bf5d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 10
+  mask:
+    serializedVersion: 2
+    m_Bits: 55
