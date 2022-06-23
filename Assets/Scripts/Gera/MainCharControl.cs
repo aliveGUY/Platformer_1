@@ -13,7 +13,7 @@ public class MainCharControl : MonoBehaviour
         rbMovePosition
     }
     
-    public Move move;
+    public Move move; 
     public float speed;
     private Transform m_transform;
     private Rigidbody2D m_rb;
