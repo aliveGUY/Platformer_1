@@ -20,7 +20,7 @@ public class MainCharControl : MonoBehaviour
     private Vector2 m_dir, m_pos;
     // Start is called before the first frame update
     void Start()
-    {
+    {   
         m_rb = GetComponent<Rigidbody2D>();
         m_transform = GetComponent<Transform>();
         m_pos = m_transform.position;
@@ -29,6 +29,7 @@ public class MainCharControl : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        
         //horizontal = Input.GetAxis("Horizontal");
         //vertical = Input.GetAxis("Vertical");
         //Vector2 position = transform.position;
