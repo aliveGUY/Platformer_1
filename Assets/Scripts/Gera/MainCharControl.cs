@@ -23,7 +23,7 @@ public class MainCharControl : MonoBehaviour
     private Vector2 m_dir, m_pos;
     // Start is called before the first frame update
     void Start()
-    {
+    {   
         m_rb = GetComponent<Rigidbody2D>();
         m_transform = GetComponent<Transform>();
         m_pos = m_transform.position;
@@ -40,10 +40,10 @@ public class MainCharControl : MonoBehaviour
         //Vector3 diff = m_dir - (Vector2)transform.position; //
 
         //diff.Normalize();//
-        ////Заносим её в наши x и y
+        ////пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅ пїЅпїЅпїЅпїЅ x пїЅ y
         //anim.SetFloat("x", diff.x);//
         //anim.SetFloat("y", diff.y);//
-        ////Устанавливаем значение походки в аниматоре
+        ////пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         //anim.SetBool("IsWalking", true);//
         InputValue();
         TrMove();
@@ -57,7 +57,7 @@ public class MainCharControl : MonoBehaviour
      //       if (Vector2.Distance(transform.position, worldPos) < 0.01)
      //       {
      //           NeedToGo = false;
-     //           //Останавливаем анимацию когда дошли
+     //           //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
      //           anim.SetBool("IsWalking", false);
      //       }
 private void FixedUpdate()
