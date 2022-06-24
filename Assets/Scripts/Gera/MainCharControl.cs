@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class MainCharControl : MonoBehaviour
 {   
@@ -12,7 +13,9 @@ public class MainCharControl : MonoBehaviour
         rbVelocity,
         rbMovePosition
     }
-    
+    //Animator anim; //
+    ////bool NeedToGo = false; //
+    //anim = GetComponent();
     public Move move; 
     public float speed;
     private Transform m_transform;
@@ -24,24 +27,40 @@ public class MainCharControl : MonoBehaviour
         m_rb = GetComponent<Rigidbody2D>();
         m_transform = GetComponent<Transform>();
         m_pos = m_transform.position;
+        //transform.position = new Vector2(PlayerPrefs.GetFloat("yPos"));
     }
 
     // Update is called once per frame
     private void Update()
     {
-        
-        //horizontal = Input.GetAxis("Horizontal");
-        //vertical = Input.GetAxis("Vertical");
-        //Vector2 position = transform.position;
-        //position.x = position.x + speed * horizontal;
-        //position.y = position.y + speed * vertical;
-        //transform.position = position;
+        //if(Input.GetMouseButtonUp(0) == true) //
+        //    Vector2 m_dir = Input.mousePosition;//
+        //worldPos = Camera.main.ScreenToWorldPoint(mousePos);//
+        //NeedToGo = true;//
+        //Vector3 diff = m_dir - (Vector2)transform.position; //
+
+        //diff.Normalize();//
+        ////������� � � ���� x � y
+        //anim.SetFloat("x", diff.x);//
+        //anim.SetFloat("y", diff.y);//
+        ////������������� �������� ������� � ���������
+        //anim.SetBool("IsWalking", true);//
         InputValue();
         TrMove();
-        
+        if (m_transform.position.y < -30f)
+        { SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
     }
-
-    private void FixedUpdate()
+     //if (NeedToGo)
+     //   {
+     //       rigidBody2d.MovePosition(Vector2.MoveTowards(transform.position, worldPos, Speed* Time.deltaTime));
+            
+     //       if (Vector2.Distance(transform.position, worldPos) < 0.01)
+     //       {
+     //           NeedToGo = false;
+     //           //������������� �������� ����� �����
+     //           anim.SetBool("IsWalking", false);
+     //       }
+private void FixedUpdate()
     {
         RbMove();
     }
@@ -73,6 +92,13 @@ public class MainCharControl : MonoBehaviour
         //}
     }
 
+
+    //private void OnTriggerStay2D(Collider2D other)//
+    //{if (other.tag == "checkpoint")//
+    //    { PlayerPrefs.Setfloat("xPos", m_transform.position.x);//
+    //        PlayerPrefs.Setfloat("yPos", m_transform.position.y); //
+    //    } //
+    //} //
     private void RbMove()
     {
         if (move == Move.rbForce)

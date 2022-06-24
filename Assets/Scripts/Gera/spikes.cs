@@ -7,8 +7,9 @@ public class spikes : MonoBehaviour
     // Start is called before the first frame update
     void OnTriggerEnter2D(Collider2D other)
     {
-        MainCharControl controller = other.GetComponent<MainCharControl>();
-        Destroy(controller);
+        MainCharControl controller = other.GetComponentInChildren<MainCharControl>();
+        
+        //Destroy(controller);
         Debug.Log("GameObject destroy");
     }
 
